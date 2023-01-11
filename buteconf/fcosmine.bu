@@ -21,7 +21,7 @@ storage:
     - path: /home/fcosmine/compconf/fcosmine.yml
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/compconf/fcosmine.yml
+        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/compconf/fcosmine.yml
     - path: /home/fcosmine/fosdemcd/data/ops.json
       mode: 0644
       contents:
