@@ -26,22 +26,28 @@ storage:
       mode: 0644
       contents:
         source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json
+    - path: /etc/systemd/system/install-podman-compose-and-firewalld.service
+      mode: 0644
+      contents:
+        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service
+    - path: /etc/systemd/system/allow-minecraft-and-openssh-through-firewall.service
+      mode: 0644
+      contents:
+        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/allow-minecraft-and-openssh-through-firewall.service
+    - path: /etc/systemd/system/start-minecraft-dedicated-server.service
+      mode: 0644
+      contents:
+        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service
 systemd:
   units:
     - name: install-podman-compose-and-firewalld.service
       enabled: true
-      contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service
     - name: firewalld.service
       enabled: true
     - name: allow-minecraft-and-openssh-through-firewall.service
       enabled: true
-      contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/allow-minecraft-and-openssh-through-firewall.service
     - name: start-minecraft-dedicated-server.service
       enabled: true
-      contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service
 passwd:
   users:
     - name: fcosmine

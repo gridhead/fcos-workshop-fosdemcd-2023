@@ -1,0 +1,106 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "wheel"
+        ],
+        "homeDir": "/home/fcosmine",
+        "name": "fcosmine",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCq4wf6HvzSnMq6dH8ffXSMPmnta1jSfC8zc7/Dli4XGMlkci99IO9vPuXI+oKZUt+3P11qi7+ZU0h+L/HQJjdH9RU5f8AAm0Ggmv/6HapnFIBH+oAdZpQONtLPhoByNVL2JQDGmjZFivbhXRqLaeX/wW8i2+gBmvTV9Ar8VIlhDlL86Vsy0jZpNiVxa2WoHfslU/g7pwy3WG7XqCs+WSvJjd3wL3ToNljJ/g9MtXZhb/HYgd5jObpSXuk9uir5TPbD2F6vOYyT7NdEPb8/D9llc8IhYKyqdwTBxYxtWS68eFsr/HCC9AnF0AE42TPuFkQCilviLLtLNH10kjYj4NPiMf4FYfLWqGRdM6klfgJ+stpV5HAe3bOZrPv6U8ZBRDA3S9m0beKdACGsv0b5eL9gNxQOYHorakNglzWx7IdPyKOSPqb2sDl7tdyab8HJkElcUSzH0U+XU8xyjWRWmk8a8KOhclc4cHQUceoeaXS46/1EMgLL2SKgAezexanffcE= t0xic0der@W10P-STARDRAGON"
+        ],
+        "shell": "/bin/bash"
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/hostname",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/hostname"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/systemd/zram-generator.conf",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/zram-generator.conf"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/firewalld/services/fcosmine.xml",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/firewalld/services/fcosmine.xml"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/home/fcosmine/compconf/fcosmine.yml",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/compconf/fcosmine.yml"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/home/fcosmine/fosdemcd/data/ops.json",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/systemd/system/install-podman-compose-and-firewalld.service",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/systemd/system/allow-minecraft-and-openssh-through-firewall.service",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/allow-minecraft-and-openssh-through-firewall.service"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/systemd/system/start-minecraft-dedicated-server.service",
+        "contents": {
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service"
+        },
+        "mode": 420
+      }
+    ],
+    "links": [
+      {
+        "path": "/etc/localtime",
+        "target": "/usr/share/zoneinfo/Asia/Kolkata"
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "enabled": true,
+        "name": "install-podman-compose-and-firewalld.service"
+      },
+      {
+        "enabled": true,
+        "name": "firewalld.service"
+      },
+      {
+        "enabled": true,
+        "name": "allow-minecraft-and-openssh-through-firewall.service"
+      },
+      {
+        "enabled": true,
+        "name": "start-minecraft-dedicated-server.service"
+      }
+    ]
+  }
+}
