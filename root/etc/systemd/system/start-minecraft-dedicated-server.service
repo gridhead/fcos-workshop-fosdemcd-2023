@@ -1,0 +1,15 @@
+[Unit]
+Description=Start Minecraft dedicated server
+Wants=network-online.target
+After=network-online.target
+Before=zincati.service
+ConditionPathExists=!/var/lib/done-start-minecraft-dedicated-server.stamp
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/podman-compose -f /home/fcosmine/compconf/fcosmine.yml up -d
+ExecStart=/bin/touch /var/lib/done-start-minecraft-dedicated-server.stamp
+
+[Install]
+WantedBy=multi-user.target
