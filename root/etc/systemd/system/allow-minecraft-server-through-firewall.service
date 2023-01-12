@@ -7,6 +7,7 @@ ConditionPathExists=!/var/lib/done-allow-minecraft-server-through-firewall.stamp
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+ExecStartPre=/usr/bin/systemctl start firewalld.service
 ExecStart=/usr/bin/firewall-cmd --reload
 ExecStart=/usr/bin/firewall-cmd --add-service fcosmine --permanent
 ExecStart=/usr/bin/firewall-cmd --reload
