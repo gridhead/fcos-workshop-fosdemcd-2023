@@ -8,7 +8,7 @@ ConditionPathExists=!/var/lib/done-install-podman-compose-and-firewalld.stamp
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/rpm-ostree install --apply-live --assumeyes podman-compose firewalld
+ExecStart=/usr/bin/rpm-ostree install --assumeyes podman-compose firewalld
 ExecStart=/bin/touch /var/lib/done-install-podman-compose-and-firewalld.stamp
 
 [Install]
