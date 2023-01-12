@@ -2,7 +2,7 @@
 version: "3.3"
 services:
   fcosmine-fosdemcd:
-    image: "itzg/minecraft-server:latest"
+    image: "docker.io/itzg/minecraft-server:latest"
     container_name: "fcosmine-fosdemcd"
     hostname: "fosdemcd"
     deploy:
