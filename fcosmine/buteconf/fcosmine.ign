@@ -55,21 +55,21 @@
       {
         "path": "/etc/hostname",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/hostname"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/hostname"
         },
         "mode": 420
       },
       {
         "path": "/etc/systemd/zram-generator.conf",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/zram-generator.conf"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/zram-generator.conf"
         },
         "mode": 420
       },
       {
         "path": "/etc/firewalld/services/fcosmine.xml",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/firewalld/services/fcosmine.xml"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/firewalld/services/fcosmine.xml"
         },
         "mode": 420
       },
@@ -82,7 +82,7 @@
           "name": "fcosmine"
         },
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/compconf/fcosmine.yml"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/home/fcosmine/compconf/fcosmine.yml"
         },
         "mode": 420
       },
@@ -95,28 +95,28 @@
           "name": "fcosmine"
         },
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json"
         },
         "mode": 420
       },
       {
         "path": "/etc/systemd/system/install-podman-compose-and-firewalld.service",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service"
         },
         "mode": 420
       },
       {
         "path": "/etc/systemd/system/allow-minecraft-server-through-firewall.service",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/allow-minecraft-server-through-firewall.service"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/allow-minecraft-server-through-firewall.service"
         },
         "mode": 420
       },
       {
         "path": "/etc/systemd/system/start-minecraft-dedicated-server.service",
         "contents": {
-          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service"
+          "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service"
         },
         "mode": 420
       }
