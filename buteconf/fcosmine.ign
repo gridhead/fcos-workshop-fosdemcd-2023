@@ -10,6 +10,7 @@
         ],
         "homeDir": "/home/fcosmine",
         "name": "fcosmine",
+        "passwordHash": "$y$j9T$hlbAnXGhNb8IOK4zvD0tE.$2lK3gK7BZgEamjBW.mR/rjWyj7Lng5XKPlijMoit355",
         "sshAuthorizedKeys": [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCq4wf6HvzSnMq6dH8ffXSMPmnta1jSfC8zc7/Dli4XGMlkci99IO9vPuXI+oKZUt+3P11qi7+ZU0h+L/HQJjdH9RU5f8AAm0Ggmv/6HapnFIBH+oAdZpQONtLPhoByNVL2JQDGmjZFivbhXRqLaeX/wW8i2+gBmvTV9Ar8VIlhDlL86Vsy0jZpNiVxa2WoHfslU/g7pwy3WG7XqCs+WSvJjd3wL3ToNljJ/g9MtXZhb/HYgd5jObpSXuk9uir5TPbD2F6vOYyT7NdEPb8/D9llc8IhYKyqdwTBxYxtWS68eFsr/HCC9AnF0AE42TPuFkQCilviLLtLNH10kjYj4NPiMf4FYfLWqGRdM6klfgJ+stpV5HAe3bOZrPv6U8ZBRDA3S9m0beKdACGsv0b5eL9gNxQOYHorakNglzWx7IdPyKOSPqb2sDl7tdyab8HJkElcUSzH0U+XU8xyjWRWmk8a8KOhclc4cHQUceoeaXS46/1EMgLL2SKgAezexanffcE= t0xic0der@W10P-STARDRAGON"
         ],
@@ -18,6 +19,28 @@
     ]
   },
   "storage": {
+    "directories": [
+      {
+        "group": {
+          "name": "fcosmine"
+        },
+        "path": "/home/fcosmine/compconf",
+        "user": {
+          "name": "fcosmine"
+        },
+        "mode": 493
+      },
+      {
+        "group": {
+          "name": "fcosmine"
+        },
+        "path": "/home/fcosmine/fosdemcd/data",
+        "user": {
+          "name": "fcosmine"
+        },
+        "mode": 493
+      }
+    ],
     "files": [
       {
         "path": "/etc/hostname",
@@ -41,14 +64,26 @@
         "mode": 420
       },
       {
+        "group": {
+          "name": "fcosmine"
+        },
         "path": "/home/fcosmine/compconf/fcosmine.yml",
+        "user": {
+          "name": "fcosmine"
+        },
         "contents": {
           "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/compconf/fcosmine.yml"
         },
         "mode": 420
       },
       {
+        "group": {
+          "name": "fcosmine"
+        },
         "path": "/home/fcosmine/fosdemcd/data/ops.json",
+        "user": {
+          "name": "fcosmine"
+        },
         "contents": {
           "source": "https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json"
         },
