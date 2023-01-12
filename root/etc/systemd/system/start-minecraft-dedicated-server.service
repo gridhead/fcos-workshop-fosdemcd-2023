@@ -1,7 +1,7 @@
 [Unit]
 Description=Start Minecraft dedicated server
-After=podman.service
-Requires=podman.service
+After=network-online.target podman.service
+Requires=network-online.target podman.service
 ConditionPathExists=/var/lib/done-install-podman-compose-and-firewalld.stamp
 ConditionPathExists=!/var/lib/done-start-minecraft-dedicated-server.stamp
 
