@@ -1,5 +1,5 @@
 [Unit]
-Description=Allow Minecraft and SSH through Firewall
+Description=Allow Minecraft Server through Firewall
 Wants=network-online.target
 After=network-online.target
 Before=zincati.service
@@ -10,7 +10,6 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/firewall-cmd --reload
 ExecStart=/usr/bin/firewall-cmd --add-service fcosmine --permanent
-ExecStart=/usr/bin/firewall-cmd --add-service ssh --permanent
 ExecStart=/usr/bin/firewall-cmd --reload
 ExecStart=/bin/touch /var/lib/done-allow-minecraft-and-openssh-through-firewall.stamp
 
