@@ -2,7 +2,6 @@
 Description=Start Minecraft dedicated server
 Wants=network-online.target
 After=network-online.target
-Before=zincati.service
 ConditionPathExists=!/var/lib/done-start-minecraft-dedicated-server.stamp
 
 [Service]
