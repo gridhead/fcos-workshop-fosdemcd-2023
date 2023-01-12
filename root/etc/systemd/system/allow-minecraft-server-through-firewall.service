@@ -2,6 +2,7 @@
 Description=Allow Minecraft Server through Firewall
 After=firewalld.service
 Requires=firewalld.service
+ConditionPathExists=/usr/bin/firewall-cmd
 ConditionPathExists=!/var/lib/done-allow-minecraft-server-through-firewall.stamp
 
 [Service]
