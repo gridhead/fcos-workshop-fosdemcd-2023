@@ -83,5 +83,7 @@ systemd:
       enabled: true
     - name: allow-minecraft-server-through-firewall.service
       enabled: true
+    - name: podman.service
+      enabled: true
     - name: start-minecraft-dedicated-server.service
       enabled: true

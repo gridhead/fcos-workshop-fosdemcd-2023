@@ -1,7 +1,7 @@
 [Unit]
 Description=Layer Podman Compose and Firewalld with rpm-ostree
-Wants=network-online.target
 After=network-online.target
+Requires=network-online.target
 Before=zincati.service
 ConditionPathExists=!/var/lib/done-install-podman-compose-and-firewalld.stamp
 

@@ -1,7 +1,9 @@
 [Unit]
 Description=Start Minecraft dedicated server
-Wants=network-online.target
 After=network-online.target
+Requires=network-online.target
+After=podman.service
+Requires=podman.service
 ConditionPathExists=!/var/lib/done-start-minecraft-dedicated-server.stamp
 
 [Service]

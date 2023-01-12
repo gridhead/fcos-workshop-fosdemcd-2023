@@ -1,7 +1,9 @@
 [Unit]
 Description=Allow Minecraft Server through Firewall
-Wants=network-online.target
 After=network-online.target
+Requires=network-online.target
+After=firewalld.service
+Requires=firewalld.service
 ConditionPathExists=!/var/lib/done-allow-minecraft-server-through-firewall.stamp
 
 [Service]
