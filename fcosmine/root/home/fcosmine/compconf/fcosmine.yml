@@ -46,4 +46,3 @@ services:
       - "9999:25565/tcp"
     volumes:
       - "/home/fcosmine/fosdemcd/data:/data:Z"
-    restart: "always"
