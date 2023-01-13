@@ -9,8 +9,8 @@ ConditionPathExists=!/var/lib/done-install-podman-compose-and-firewalld.stamp
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/rpm-ostree install --assumeyes --allow-inactive podman-compose firewalld
-ExecStart=/usr/bin/systemctl --no-block reboot
 ExecStart=/bin/touch /var/lib/done-install-podman-compose-and-firewalld.stamp
+ExecStart=/usr/bin/systemctl --no-block reboot
 
 [Install]
 WantedBy=multi-user.target
