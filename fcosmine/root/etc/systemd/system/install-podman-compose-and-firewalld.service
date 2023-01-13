@@ -4,6 +4,7 @@ After=network-online.target
 Requires=network-online.target
 Before=zincati.service
 ConditionPathExists=!/var/lib/done-install-podman-compose-and-firewalld.stamp
+ConditionFirstBoot=yes
 
 [Service]
 Type=oneshot
