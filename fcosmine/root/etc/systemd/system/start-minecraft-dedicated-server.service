@@ -2,11 +2,10 @@
 Description=Start Minecraft dedicated server
 After=network-online.target podman.service
 Requires=network-online.target podman.service
-ConditionPathExists=/var/lib/done-install-podman-compose-and-firewalld.stamp
+ConditionPathExists=/usr/bin/podman-compose
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
 ExecStart=/usr/bin/podman-compose -f /home/fcosmine/compconf/fcosmine.yml up -d
 
 [Install]
