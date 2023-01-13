@@ -1,0 +1,5 @@
+<service>
+  <short>Minecraft Server on Fedora CoreOS</short>
+  <description>Minecraft is a sandbox game developed by Mojang Studios. The game was created by Markus Notch Persson in the Java programming language.</description>
+  <port protocol="tcp" port="9999"/>
+</service>

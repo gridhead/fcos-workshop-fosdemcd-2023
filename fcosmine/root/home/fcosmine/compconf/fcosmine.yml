@@ -1,0 +1,49 @@
+---
+version: "3.3"
+services:
+  fcosmine-fosdemcd:
+    image: "docker.io/itzg/minecraft-server:latest"
+    container_name: "fcosmine-fosdemcd"
+    hostname: "fosdemcd"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: "4096M"
+        reservations:
+          cpus: "0.25"
+          memory: "2048M"
+    environment:
+      - "UID=1000"
+      - "GID=1000"
+      - "EULA=TRUE"
+      - "VERSION=1.19.2"
+      - "TYPE=PAPER"
+      - "DIFFICULTY=easy"
+      - "ENABLE_RCON=true"
+      - "RCON_PASSWORD=fosdemcd"
+      - "MAX_PLAYERS=32"
+      - "ANNOUNCE_PLAYER_ACHIEVEMENTS=true"
+      - "GENERATE_STRUCTURES=true"
+      - "SNOOPER_ENABLED=false"
+      - "ALLOW_NETHER=true"
+      - "SPAWN_ANIMALS=true"
+      - "SPAWN_MONSTERS=true"
+      - "SPAWN_NPCS=true"
+      - "VIEW_DISTANCE=32"
+      - "SIMULATION_DISTANCE=32"
+      - "MODE=survival"
+      - "PVP=true"
+      - "ONLINE_MODE=false"
+      - "SERVER_NAME=PaperMC Server 1.19.2 (Fedora CoreOS @ FOSDEM 2023 Containers Devroom)"
+      - "MOTD=PaperMC Server 1.19.2 (Fedora CoreOS @ FOSDEM 2023 Containers Devroom)"
+      - "MEMORY=3G"
+      - "JVM_XX_OPTS=-XX:MaxRAMPercentage=75"
+      - "ENABLE_ROLLING_LOGS=true"
+      - "TZ=Asia/Kolkata"
+      - "OPS_FILE=/home/fcosmine/fosdemcd/data/ops.json"
+    ports:
+      - "9999:25565/tcp"
+    volumes:
+      - "/home/fcosmine/fosdemcd/data:/data:Z"
+    restart: "unless-stopped"
