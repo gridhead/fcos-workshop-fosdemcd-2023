@@ -3,15 +3,13 @@ Description=Layer Podman Compose and Firewalld with rpm-ostree
 After=network-online.target
 Requires=network-online.target
 Before=zincati.service
-ConditionPathExists=!/var/lib/done-install-podman-compose-and-firewalld.stamp
 ConditionFirstBoot=yes
+SuccessAction=reboot
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/rpm-ostree install --assumeyes --allow-inactive podman-compose firewalld
-ExecStart=/bin/touch /var/lib/done-install-podman-compose-and-firewalld.stamp
-ExecStart=/usr/bin/systemctl --no-block reboot
 
 [Install]
 WantedBy=multi-user.target
