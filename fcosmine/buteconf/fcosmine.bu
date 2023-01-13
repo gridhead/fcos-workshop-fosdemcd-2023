@@ -4,30 +4,36 @@ version: 1.4.0
 passwd:
   users:
     - name: fcosmine
+      # The password_hash is for the "safest" password in the world i.e. "password" (without quotes, of course)
       password_hash: $y$j9T$hlbAnXGhNb8IOK4zvD0tE.$2lK3gK7BZgEamjBW.mR/rjWyj7Lng5XKPlijMoit355
       home_dir: /home/fcosmine
       shell: /bin/bash
+      # Being in the "wheel" group allows the newly created user to have elevate privileges using "sudo"
       groups:
         - wheel
       ssh_authorized_keys:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCq4wf6HvzSnMq6dH8ffXSMPmnta1jSfC8zc7/Dli4XGMlkci99IO9vPuXI+oKZUt+3P11qi7+ZU0h+L/HQJjdH9RU5f8AAm0Ggmv/6HapnFIBH+oAdZpQONtLPhoByNVL2JQDGmjZFivbhXRqLaeX/wW8i2+gBmvTV9Ar8VIlhDlL86Vsy0jZpNiVxa2WoHfslU/g7pwy3WG7XqCs+WSvJjd3wL3ToNljJ/g9MtXZhb/HYgd5jObpSXuk9uir5TPbD2F6vOYyT7NdEPb8/D9llc8IhYKyqdwTBxYxtWS68eFsr/HCC9AnF0AE42TPuFkQCilviLLtLNH10kjYj4NPiMf4FYfLWqGRdM6klfgJ+stpV5HAe3bOZrPv6U8ZBRDA3S9m0beKdACGsv0b5eL9gNxQOYHorakNglzWx7IdPyKOSPqb2sDl7tdyab8HJkElcUSzH0U+XU8xyjWRWmk8a8KOhclc4cHQUceoeaXS46/1EMgLL2SKgAezexanffcE= t0xic0der@W10P-STARDRAGON
 storage:
   links:
+      # Synchronize the system clock to your timezone
     - path: /etc/localtime
       target: /usr/share/zoneinfo/Asia/Kolkata
   directories:
+      # We need to make sure that the directories created within the home directory of the newly created user, are indeed owned by the said user
     - path: /home/fcosmine/compconf
       mode: 0755
       user:
         name: fcosmine
       group:
         name: fcosmine
+      # We need to make sure that the directories created within the home directory of the newly created user, are indeed owned by the said user
     - path: /home/fcosmine/fosdemcd
       mode: 0755
       user:
         name: fcosmine
       group:
         name: fcosmine
+      # We need to make sure that the directories created within the home directory of the newly created user, are indeed owned by the said user
     - path: /home/fcosmine/fosdemcd/data
       mode: 0755
       user:
@@ -35,55 +41,70 @@ storage:
       group:
         name: fcosmine
   files:
+      # The hostname for the installation would be "fcosmine" in this case.
     - path: /etc/hostname
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/hostname
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/hostname
+      # This helps configure swap on ZRAM
+      # More information can be found here https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-configure-swaponzram/
     - path: /etc/systemd/zram-generator.conf
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/zram-generator.conf
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/systemd/zram-generator.conf
+      # We need to allow our designated port 9999 for the Minecraft Server through the firewall
     - path: /etc/firewalld/services/fcosmine.xml
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/firewalld/services/fcosmine.xml
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/firewalld/services/fcosmine.xml
+      # This fetches the compose configuration from the stated remote location
+      # More information can be found here https://github.com/itzg/docker-minecraft-server/blob/master/README.md
     - path: /home/fcosmine/compconf/fcosmine.yml
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/home/fcosmine/compconf/fcosmine.yml
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/home/fcosmine/compconf/fcosmine.yml
       user:
         name: fcosmine
       group:
         name: fcosmine
+      # This file contains an array of server admins, which would be empty in this case for testing purposes
     - path: /home/fcosmine/fosdemcd/data/ops.json
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/home/fcosmine/fosdemcd/data/ops.json
       user:
         name: fcosmine
       group:
         name: fcosmine
+      # Oneshot systemd unit -> Layer Podman Compose and Firewalld with rpm-ostree
     - path: /etc/systemd/system/install-podman-compose-and-firewalld.service
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/systemd/system/install-podman-compose-and-firewalld.service
+      # Oneshot systemd unit -> Allow Minecraft Server through Firewall
     - path: /etc/systemd/system/allow-minecraft-server-through-firewall.service
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/allow-minecraft-server-through-firewall.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/systemd/system/allow-minecraft-server-through-firewall.service
+      # Oneshot systemd unit -> Start Minecraft dedicated server
     - path: /etc/systemd/system/start-minecraft-dedicated-server.service
       mode: 0644
       contents:
-        source: https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/raw/fcosmine/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosmine/root/etc/systemd/system/start-minecraft-dedicated-server.service
 systemd:
   units:
+      # Step #1 -> Layer Podman Compose and Firewalld with rpm-ostree
     - name: install-podman-compose-and-firewalld.service
       enabled: true
+      # Step #2 -> Enable and start the Firewalld service
     - name: firewalld.service
       enabled: true
+      # Step #3 -> Allow Minecraft Server through Firewall
     - name: allow-minecraft-server-through-firewall.service
       enabled: true
+      # Step #4 -> Enable and start the Podman service
     - name: podman.service
       enabled: true
+      # Step #5 -> Start Minecraft dedicated server
     - name: start-minecraft-dedicated-server.service
       enabled: true
