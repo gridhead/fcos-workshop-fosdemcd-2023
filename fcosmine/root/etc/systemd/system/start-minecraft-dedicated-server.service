@@ -7,6 +7,7 @@ ConditionPathExists=/usr/bin/podman-compose
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/podman-compose -f /home/fcosmine/compconf/fcosmine.yml up -d
+ExecStop=/usr/bin/podman-compose -f /home/fcosmine/compconf/fcosmine.yml down
 
 [Install]
 WantedBy=multi-user.target
