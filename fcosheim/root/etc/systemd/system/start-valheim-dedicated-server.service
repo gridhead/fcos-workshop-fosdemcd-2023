@@ -1,0 +1,12 @@
+[Unit]
+Description=Start Valheim dedicated server
+After=network-online.target podman.service
+Requires=network-online.target podman.service
+ConditionPathExists=/usr/bin/podman-compose
+
+[Service]
+ExecStart=/usr/bin/podman-compose -f /home/fcosheim/compconf/fcosheim.yml up
+ExecStop=/usr/bin/podman-compose -f /home/fcosheim/compconf/fcosheim.yml down
+
+[Install]
+WantedBy=multi-user.target
