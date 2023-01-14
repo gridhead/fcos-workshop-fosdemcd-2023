@@ -1,0 +1,6 @@
+<service>
+  <short>Valheim Server on Fedora CoreOS</short>
+  <description>Valheim is an upcoming survival and sandbox video game by the Swedish developer Iron Gate Studio and published by Coffee Stain Studios.</description>
+  <port protocol="udp" port="2456"/>
+  <port protocol="udp" port="2457"/>
+</service>
