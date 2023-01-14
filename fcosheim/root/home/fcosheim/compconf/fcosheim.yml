@@ -19,7 +19,7 @@ services:
       - "TZ=Asia/Kolkata"
       - "SERVER_NAME=Valheim Server (Fedora CoreOS @ FOSDEM 2023 Containers Devroom)"
       - "SERVER_PORT=2456"
-      - "WORLD_NAME=FOSSTopia"
+      - "WORLD_NAME=FOSStopia"
       - "SERVER_PASS=fosdemcd"
       - "SERVER_PUBLIC=true"
     ports:
