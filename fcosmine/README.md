@@ -81,7 +81,7 @@ case, We would start service containers.
    `install-podman-compose-and-firewalld.service` by executing the following 
    command and wait for the guest device to reboot automatically.
    ```
-   sudo systemctl status install-podman-compose-and-firewalld.service
+   journalctl --follow --unit install-podman-compose-and-firewalld.service
    ```
 6. After the guest installation has booted up, monitor the `systemd` services 
    `allow-minecraft-server-through-firewall.service` and 
@@ -91,7 +91,7 @@ case, We would start service containers.
    sudo systemctl status allow-minecraft-server-through-firewall.service
    ```
    ```
-   sudo systemctl status start-minecraft-dedicated-server.service
+   journalctl --follow --unit start-minecraft-dedicated-server.service
    ```
 
 ### Step #3 - Become creative
