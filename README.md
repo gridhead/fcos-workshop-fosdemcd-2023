@@ -6,11 +6,6 @@ Multiplayer Homelab Distro" talk on FOSDEM 2023 Containers Devroom
 
 More information can be found [here](https://fosdem.org/2023/schedule/event/container_fedora_coreos/).
 
-## Chapters
-
-1. [Minecraft](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosmine/README.md)
-2. [Valheim](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosheim/README.md)
-
 ## Speakers
 
 * **Akashdeep Dhar**  
@@ -65,6 +60,15 @@ etc.).
 6. **Software engineers** or **students** would gain more information on where 
    they can start from within the community (i.e. Fedora Infrastructure) with 
    their learnings.
+
+## Chapters
+
+* [Minecraft](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosmine/README.md)
+* [Valheim](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosheim/README.md)
+
+## Presentation
+
+* [Fedora CoreOS - Your Next Multiplayer Homelab Distro](https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/deck/fcos-workshop-fosdemcd-2023.pdf)
 
 ## Resources
 
