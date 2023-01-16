@@ -1,0 +1,17 @@
+[Unit]
+Description=Allow Valheim Server through Firewall
+After=firewalld.service
+Requires=firewalld.service
+ConditionPathExists=/usr/bin/firewall-cmd
+ConditionPathExists=!/var/lib/done-allow-valheim-server-through-firewall.stamp
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/firewall-cmd --reload
+ExecStart=/usr/bin/firewall-cmd --add-service fcosheim --permanent
+ExecStart=/usr/bin/firewall-cmd --reload
+ExecStart=/bin/touch /var/lib/done-allow-valheim-server-through-firewall.stamp
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,35 @@
+---
+version: "3.3"
+services:
+  fcosheim_fosdemcd:
+    image: "docker.io/lloesche/valheim-server:latest"
+    container_name: "fcosheim-fosdemcd"
+    hostname: "fosdemcd"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: "8192M"
+        reservations:
+          cpus: "0.50"
+          memory: "4096M"
+    environment:
+      - "PUID=0"
+      - "PGID=0"
+      - "TZ=Asia/Kolkata"
+      - "SERVER_NAME=Valheim Server (Fedora CoreOS @ FOSDEM 2023 Containers Devroom)"
+      - "SERVER_PORT=2456"
+      - "WORLD_NAME=FOSStopia"
+      - "SERVER_PASS=fosdemcd"
+      - "SERVER_PUBLIC=true"
+    ports:
+      - "2456:2456/udp"
+      - "2457:2457/udp"
+      - "9001:9001/tcp"
+    volumes:
+      - "/home/fcosheim/fosdemcd/config:/config:Z"
+      - "/home/fcosheim/fosdemcd/data:/opt/valheim:Z"
+    cap_add:
+      - "sys_nice"
+    stop_grace_period: "2m"
+    restart: "unless-stopped"
