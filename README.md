@@ -63,8 +63,8 @@ etc.).
 
 ## Chapters
 
-* [Minecraft](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosmine/README.md)
-* [Valheim](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosheim/README.md)
+* [Your Minecraft server](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosmine/README.md)
+* [Your Valheim server](https://github.com/t0xic0der/fcos-workshop-fosdemcd-2023/blob/main/fcosheim/README.md)
 
 ## Presentation
 
