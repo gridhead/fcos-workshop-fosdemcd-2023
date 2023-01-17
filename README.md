@@ -70,6 +70,13 @@ etc.).
 
 * [Fedora CoreOS - Your Next Multiplayer Homelab Distro](https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/deck/fcos-workshop-fosdemcd-2023.pdf)
 
+## Special thanks to
+
+* [David Kirwan](https://github.com/davidkirwan)
+* [Michal Konecny](https://github.com/zlopez)
+* [Clement Verna](https://github.com/cverna)
+* [Adam Piasecki](https://github.com/c4rt0)
+
 ## Resources
 
 * [Fedora CoreOS Download Page](https://getfedora.org/en/coreos)
