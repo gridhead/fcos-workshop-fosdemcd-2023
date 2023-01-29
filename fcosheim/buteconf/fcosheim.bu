@@ -52,24 +52,24 @@ storage:
     - path: /etc/hostname
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/hostname
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/hostname
       # This helps configure swap on ZRAM
       # More information can be found here https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-configure-swaponzram/
     - path: /etc/systemd/zram-generator.conf
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/systemd/zram-generator.conf
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/systemd/zram-generator.conf
       # We need to allow our designated ports 2456/udp and 2457/udp for the Valheim Server through the firewall
     - path: /etc/firewalld/services/fcosheim.xml
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/firewalld/services/fcosheim.xml
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/firewalld/services/fcosheim.xml
       # This fetches the compose configuration from the stated remote location
       # More information can be found here https://github.com/lloesche/valheim-server-docker#readme
     - path: /home/fcosheim/compconf/fcosheim.yml
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/home/fcosheim/compconf/fcosheim.yml
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/home/fcosheim/compconf/fcosheim.yml
       user:
         name: fcosheim
       group:
@@ -78,17 +78,17 @@ storage:
     - path: /etc/systemd/system/install-podman-compose-and-firewalld.service
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/systemd/system/install-podman-compose-and-firewalld.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/systemd/system/install-podman-compose-and-firewalld.service
       # Oneshot systemd unit -> Allow Valheim Server through Firewall
     - path: /etc/systemd/system/allow-valheim-server-through-firewall.service
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/systemd/system/allow-valheim-server-through-firewall.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/systemd/system/allow-valheim-server-through-firewall.service
       # Oneshot systemd unit -> Start Valheim dedicated server
     - path: /etc/systemd/system/start-valheim-dedicated-server.service
       mode: 0644
       contents:
-        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/fcosheim/fcosheim/root/etc/systemd/system/start-valheim-dedicated-server.service
+        source: https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/fcosheim/root/etc/systemd/system/start-valheim-dedicated-server.service
 systemd:
   units:
       # Step #1 -> Layer Podman Compose and Firewalld with rpm-ostree
