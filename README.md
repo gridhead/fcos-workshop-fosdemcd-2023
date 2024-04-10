@@ -70,7 +70,11 @@ etc.).
 
 * [Fedora CoreOS - Your Next Multiplayer Homelab Distro](https://raw.githubusercontent.com/t0xic0der/fcos-workshop-fosdemcd-2023/main/deck/fcos-workshop-fosdemcd-2023.pdf)
 
-## Special thanks to
+## Coverage
+
+* [An Overview Of Single-Purpose Linux Distributions - Linux Weekly News](https://lwn.net/Articles/922968/)
+
+## Appreciation
 
 * [David Kirwan](https://github.com/davidkirwan)
 * [Michal Konecny](https://github.com/zlopez)
